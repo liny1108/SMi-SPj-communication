@@ -257,20 +257,3 @@ def listen_for_messages(sock, port, SK, kr, k):
             print(f"处理消息时发生错误：{e}")
 
 
-# # 初始化服务提供商（接收端）
-# if __name__ == "__main__":
-#     IDj = "ServiceProviderServiceProvider01"  # 服务提供商的身份标识
-#     s =   "q49JemhQdITirch7GIxtMtn8ug4R9gKM"  # 主密钥
-#     SPj_ip = '192.168.58.141'  # 服务提供商的IP地址
-
-#     # 生成初始密钥
-#     SK, ks, kr = derive_keysp.derive_key(IDj, s, SPj_ip)
-#     k = compute_hash(ks + SK)  # 初始 k=H(ks || SK)
-
-#     # 创建 UDP 服务器
-#     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-#     sock.bind((SPj_ip, 50001))  # 绑定端口 50001
-#     print("服务提供商监听中，等待接收消息...")
-#     # 开始监听消息
-#     listen_for_messages(sock, SK, kr, k)
-#     sock.close()
